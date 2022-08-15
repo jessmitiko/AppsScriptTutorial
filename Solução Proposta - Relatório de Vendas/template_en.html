@@ -1,0 +1,84 @@
+<head>
+    <style>
+        header {
+            height: auto;
+            width: auto;
+            background-color: rgb(243, 158, 61);
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+
+
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            border: 1px solid black;
+            font-family: arial, sans-serif;
+            width: 60%;
+            border-radius: 10px;
+        }
+
+
+
+        td,
+        th {
+            text-align: center;
+            padding: 10px
+        }
+
+        .ok {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .warning {
+            color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><b>Daily sales report</b></h1>
+        <p>Google Merchandise Store</p>
+    </header>
+
+
+
+    <h2 style='text-align: center;'><b>Bom dia!</h2>
+    <h3 style='text-align: center;'>Below is the summary of sales in your online store:
+    </h3>
+
+
+
+    <table>
+        <? for(var row = 0; row < values.length; row++) { ?>
+        <? if(row === 0) { ?>
+        <tr>
+            <? for(var column = 0; column < values.length; column++) { ?>
+            <th>
+                <?= values[row][column] ?>
+            </th>
+            <? } ?>
+        </tr>
+        <? } else { ?>
+        <tr>
+            <? for(var column = 0; column < values.length; column++) { ?>
+            <td>
+                <?= values[row][column] ?>
+            </td>
+            <? } ?>
+        </tr>
+        <? } ?>
+        <? } ?>
+    </table>
+
+    <h3 style='text-align: center;'>For more details, see the <a href=''>Sales Performance</a> report in Google
+        Analytics.</h3>
+</body>
